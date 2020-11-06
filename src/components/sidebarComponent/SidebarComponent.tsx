@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import Cities from '../../assets/data/bootcamps.json';
 import { ICity } from '../../models/ICity';
 
-const SidebarComponent = () => {
+interface ISidebarComponent {
+    selectCityHandler: Dispatch<SetStateAction<ICity>>;
+}
+
+const SidebarComponent = (props: ISidebarComponent) => {
     const cityListItems = Cities.cities.map((city: ICity) => {
-        return <li>{city.cityName}</li>;
+        return <li onClick={() => props.selectCityHandler(city)}>{city.cityName}</li>;
     });
 
     return (
