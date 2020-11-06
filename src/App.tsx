@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import './App.css';
+import './App.scss';
 import NavbarComponent from './components/navbarComponent/NavbarComponent';
+import SidebarComponent from './components/sidebarComponent/SidebarComponent';
 
 function App() {
     return (
@@ -12,7 +13,7 @@ function App() {
 
             <section className="container">
                 <div className="row">
-                    <aside className="col-4">sidebar</aside>
+                    <SidebarComponent />
 
                     <main className="col-8">main</main>
                 </div>

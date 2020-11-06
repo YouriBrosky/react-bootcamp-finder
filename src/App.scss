@@ -1,0 +1,23 @@
+.sidebar {
+    padding: 40px 25px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        border: 1px solid #ccc;
+        border-bottom: none;
+
+        li {
+            display: block;
+            margin: 0;
+            padding: 10px 10px;
+            width: 100%;
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+
+            &:hover {
+                background: yellow;
+            }
+        }
+    }
+}
