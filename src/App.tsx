@@ -18,7 +18,7 @@ function App() {
 
             <section className="container">
                 <div className="row">
-                    <SidebarComponent selectCityHandler={setSelectedCity} />
+                    <SidebarComponent selectCityHandler={setSelectedCity} currentSelectedCity={selectedCity} />
                     <MainComponent selectedCityObject={selectedCity} />
                 </div>
             </section>
