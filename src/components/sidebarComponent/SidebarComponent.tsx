@@ -8,7 +8,11 @@ interface ISidebarComponent {
 
 const SidebarComponent = (props: ISidebarComponent) => {
     const cityListItems = Cities.cities.map((city: ICity) => {
-        return <li onClick={() => props.selectCityHandler(city)}>{city.cityName}</li>;
+        return (
+            <li key={city.id} onClick={() => props.selectCityHandler(city)}>
+                {city.cityName}
+            </li>
+        );
     });
 
     return (

@@ -1,11 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
 .sidebar {
     padding: 40px 25px;
+    width: 90%;
 
     ul {
         margin: 0;
         padding: 0;
         border: 1px solid #ccc;
         border-bottom: none;
+        width: 90%;
 
         li {
             display: block;
@@ -23,5 +29,7 @@
 }
 
 .main {
-    padding: 40px 25px;
+    margin: 40px 0px;
+    border: 1px solid #ccc;
+    padding: 15px;
 }

@@ -4,12 +4,11 @@ import './App.scss';
 import MainComponent from './components/mainComponent/MainComponent';
 import NavbarComponent from './components/navbarComponent/NavbarComponent';
 import SidebarComponent from './components/sidebarComponent/SidebarComponent';
+import Cities from './assets/data/bootcamps.json';
 import { ICity } from './models/ICity';
 
 function App() {
-    const [selectedCity, setSelectedCity] = useState<ICity>({} as ICity);
-
-    console.log('selectedCity', selectedCity);
+    const [selectedCity, setSelectedCity] = useState<ICity>(Cities.cities[0] as ICity);
 
     return (
         <React.Fragment>
@@ -20,7 +19,7 @@ function App() {
             <section className="container">
                 <div className="row">
                     <SidebarComponent selectCityHandler={setSelectedCity} />
-                    <MainComponent />
+                    <MainComponent selectedCityObject={selectedCity} />
                 </div>
             </section>
         </React.Fragment>
