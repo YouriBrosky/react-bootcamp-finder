@@ -12,6 +12,8 @@ const MainComponent = (props: IMainComponent) => {
         cityDetails = (
             <React.Fragment>
                 <h3>{props.selectedCityObject.cityName}</h3>
+                <img src={`/images/${props.selectedCityObject.cityName.toLowerCase()}.jpg`} alt="scenery of city" />
+                <p>{props.selectedCityObject.summary}</p>
             </React.Fragment>
         );
     }
