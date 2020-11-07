@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './App.scss';
 import MainComponent from './components/mainComponent/MainComponent';
@@ -11,18 +12,26 @@ function App() {
     const [selectedCity, setSelectedCity] = useState<ICity>(Cities.cities[0] as ICity);
 
     return (
-        <React.Fragment>
+        <BrowserRouter>
             <nav className="App">
                 <NavbarComponent />
             </nav>
 
             <section className="container">
                 <div className="row">
-                    <SidebarComponent selectCityHandler={setSelectedCity} currentSelectedCity={selectedCity} />
-                    <MainComponent selectedCityObject={selectedCity} />
+                    <Switch>
+                        <Route path="/bootcamps">
+                            <SidebarComponent selectCityHandler={setSelectedCity} currentSelectedCity={selectedCity} />
+                            <MainComponent selectedCityObject={selectedCity} />
+                        </Route>
+
+                        <Route path="/add_bootcamp">
+                            <p>add a bootcamp</p>
+                        </Route>
+                    </Switch>
                 </div>
             </section>
-        </React.Fragment>
+        </BrowserRouter>
     );
 }
 

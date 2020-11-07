@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 const NavbarComponent = () => {
     return (
@@ -8,10 +9,10 @@ const NavbarComponent = () => {
 
             <Nav className="mr-auto" navbar>
                 <NavItem>
-                    <NavLink>Bootcamps</NavLink>
+                    <NavLink to="/bootcamps">Bootcamps</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink>Add bootcamp</NavLink>
+                    <NavLink to="/add_bootcamp">Add bootcamp</NavLink>
                 </NavItem>
             </Nav>
         </Navbar>

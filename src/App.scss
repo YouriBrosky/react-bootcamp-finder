@@ -2,6 +2,18 @@
     box-sizing: border-box;
 }
 
+.navbar {
+    a {
+        color: rgba(0, 0, 0, 0.7);
+        text-decoration: none;
+        margin-right: 25px;
+    }
+
+    a:hover {
+        color: rgba(0, 0, 0, 0.7);
+    }
+}
+
 .sidebar {
     padding: 40px 25px;
     width: 90%;
