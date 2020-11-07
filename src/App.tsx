@@ -7,6 +7,7 @@ import NavbarComponent from './components/navbarComponent/NavbarComponent';
 import SidebarComponent from './components/sidebarComponent/SidebarComponent';
 import Cities from './assets/data/bootcamps.json';
 import { ICity } from './models/ICity';
+import AddBootcampComponent from './components/addBootcampComponent/AddBootcampComponent';
 
 function App() {
     const [selectedCity, setSelectedCity] = useState<ICity>(Cities.cities[0] as ICity);
@@ -20,13 +21,17 @@ function App() {
             <section className="container">
                 <div className="row">
                     <Switch>
-                        <Route path="/bootcamps">
+                        <Route exact path="/">
                             <SidebarComponent selectCityHandler={setSelectedCity} currentSelectedCity={selectedCity} />
                             <MainComponent selectedCityObject={selectedCity} />
                         </Route>
 
-                        <Route path="/add_bootcamp">
-                            <p>add a bootcamp</p>
+                        <Route exact path="/add_bootcamp">
+                            <AddBootcampComponent />
+                        </Route>
+
+                        <Route path="/">
+                            <div className="col-12 bootcamp-container">404 route</div>
                         </Route>
                     </Switch>
                 </div>
