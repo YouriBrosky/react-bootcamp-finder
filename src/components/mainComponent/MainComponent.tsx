@@ -6,7 +6,6 @@ interface IMainComponent {
 }
 
 const MainComponent = (props: IMainComponent) => {
-    console.log('main selected city', props.selectedCityObject);
     let cityDetails = null;
     if (Object.keys(props.selectedCityObject).length > 0) {
         cityDetails = (
