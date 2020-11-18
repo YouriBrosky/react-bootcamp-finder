@@ -3,15 +3,25 @@ import { Controller, useForm } from 'react-hook-form';
 import { Button, FormGroup, Input, Label } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { addBootcamp } from '../../store/cities/actions';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 const AddBootcampComponent = () => {
+    const dispatch = useDispatch();
+    const history = useHistory();
+
     const validationSchema = yup.object().shape({
         title: yup.string().required().min(2),
         imageUrl: yup.string().required().min(5),
         details: yup.string().required(),
     });
 
-    const onSubmit = (data: any) => console.log(data);
+    const onSubmit = (data: any) => {
+        dispatch(addBootcamp(data.title, data.imageUrl, data.details));
+        history.push("/");
+    }
+
     const { handleSubmit, errors, control } = useForm({
         resolver: yupResolver(validationSchema),
     });
